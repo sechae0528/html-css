@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #a {
+          border-style: solid;
+          border-color: red;
+          background-color: red;
+          width: 100px;
+          height: 100px;
+          position: relative; /*위치이동할 수 있게 해주는 것*/
+          top: 100px;
+          left: 100px;
+          z-index: 0; /*겹쳐서 보여질때 사용 숫자가 클수록 맨앞에 보여짐*/
+      }
+      #b {
+          border-style: solid;
+          border-color: yellow;
+          background-color: yellow;
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: 190px;
+          left: 130px;
+          z-index: 1;
+      }
+      #c {
+          border-style: solid;
+          border-color: blue;
+          background-color: blue;
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: 150px;
+          left: 200px;
+          z-index: 2;
+
+      }
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+  </body>
+</html>

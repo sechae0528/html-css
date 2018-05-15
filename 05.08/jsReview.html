@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style media="screen">
+  input {}
+</style>
+
+<body>
+  <!-- 텍스트 값에 대해서 비교하기 -->
+  <input type="text" id="textArea">
+  <input type="button" value="button" id="clickButton"><br>
+  <!-- 텍스트 값 두개를 더해서 비교하기 -->
+  <input type="text" id="textArea1">
+  <input type="text" id="textArea2">
+  <input type="button" value="button" id="clickButton1"><br>
+</body>
+<script>
+  // 텍스트 값에 대해서 비교하기
+  var button1 = document.getElementById('clickButton');
+  button1.addEventListener('click', function() {
+    console.log(document.getElementById('textArea').value);
+    if (document.getElementById('textArea').value > 10) {
+      console.log("10보다 큼");
+    } else {
+      console.log("10보다 작음");
+    }
+  });
+  // 텍스트 값 두개를 더해서 비교하기
+  var button2 = document.getElementById('clickButton1');
+  button2.addEventListener('click', function() {
+    var a = Number(document.getElementById('textArea1').value);
+    var b = Number(document.getElementById('textArea2').value);
+    console.log(a);
+    console.log(b);
+    console.log(a + b);
+    if (a + b > 10) {
+      console.log("10보다 큼");
+    } else {
+      console.log("10보다 작음");
+    }
+  });
+</script>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <input type="button" value="button1" id="clickButton1">
+  <input type="button" value="button2" id="clickButton2">
+  <input type="button" value="button3" id="clickButton3">
+  <input type="button" value="button4" id="clickButton4">
+  <input type="button" value="button5" id="clickButton5"><br>
+
+</body>
+<script>
+  // for(var i=0; i<10; i++){
+  //   console.log("i", i);
+  //   console.log("i*2", i*2);
+  //   console.log("i^2", i*i);
+  // }
+
+  // 1부터 100까지 홀수만 나타내기
+  //방법1
+  var button1 = document.getElementById('clickButton1');
+  button1.addEventListener('click', function() {
+    for (var i = 1; i <= 100; i++) {
+      if (i % 2 != 0) {
+        console.log(i);
+      } else {
+
+      }
+    }
+  });
+
+  //방법2
+  var button2 = document.getElementById('clickButton2');
+  button2.addEventListener('click', function() {
+    for (var i = 0; i < 50; i++) {
+      console.log(2*i+1);
+    }
+  });
+
+  //방법3
+  var button3 = document.getElementById('clickButton3');
+  button3.addEventListener('click', function() {
+    for (var i = 1; i <= 100; i=i+2) {
+      console.log(i);
+    }
+  });
+
+  //별찍기
+  //*
+  //***
+  //*****
+  //*******
+  //*********
+  //방법1
+  var button4 = document.getElementById('clickButton4');
+  button4.addEventListener('click', function() {
+    var output = "*";
+    console.log(output);
+    for (var i = 0; i <7; i++) {
+      console.log(output +="**");
+    }
+  });
+  //방법2
+  var button5 = document.getElementById('clickButton5');
+  button5.addEventListener('click', function() {
+    for(var i =1; i <=8; i++){
+      var output = "";
+      for(j=1; j<=i*2-1; j++){
+        output += "*";
+      }
+      console.log(output);
+    }
+  });
+
+
+
+
+
+
+
+
+</script>
+
+</html>

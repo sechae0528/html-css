@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>중첩된 목록(스타일)</title>
+    <style type="text/css">
+    .style01 {
+      list-style-type: disc;
+    }
+    .style02 {
+      list-style-type: circle;
+    }
+    .style03 {
+      list-style-type: square;
+    }
+    .style04 {
+      list-style-type: none;
+    }
+    .style05 {
+      list-style-type: decimal;
+    }
+    .style06 {
+      list-style-type: upper-alpha;
+    }
+    .style07 {
+      list-style-image:url(1112.png); list-style-position: outside;
+    }
+    .style08 {
+      list-style-type: upper-roman;
+    }
+    .style09 {
+      list-style-type: upper-roman;
+    }
+    </style>
+    </head>
+  <body>
+    <h3>중첩된 목록의 예(css사용)</h3>
+    <h4>다음은 동물의 종류를 나타냅니다.</h4>
+    <UL>
+      <li class="style01">사슴
+        <UL>
+          <li class="style02">꽃사슴
+            <OL>
+              <li class="style03">체중</li>
+              <li class="style04">길이</li>
+              <li class="style05">특징</li>
+            </OL>
+          </li>
+            <li class="style06">엘크사슴</li>
+            <li class="style06">사불상
+              <UL class="style07">
+                <li class="style03">체중</li>
+                <li class="style03">길이</li>
+                <li class="style03">특징</li>
+              </UL>
+            </li>
+        </UL>
+        <li class="style08">호랑이</li>
+      <li class="style09">기린</li>
+
+    </UL>
+  </body>
+</html>

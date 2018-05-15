@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <숫자 덧셈예제><br>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="button" value="확인" id="checkButton"><br><br>
+
+    예제: id, password를 입력 받아서 로그인 버튼을 클릭했을 때, <br>
+    id가 polytech, password가 12341234면 alert창에 "로그인 성공"<br>
+    id 혹은 password가 안맞으면 alert "로그인 실패"<br><br>
+    아이디 <input type="text" id="id">
+    비밀번호 <input type="text" id="password">
+    <input type="button" value="로그인" id="checkButton1">
+
+  </body>
+  <script type="text/javascript">
+
+  //숫자 덧셈예제
+    document.getElementById('num1');
+    document.getElementById('num2');
+    var button = document.getElementById('checkButton');
+    button.addEventListener('click', function(){
+      var num1 = document.getElementById('num1').value;
+      var num2 = document.getElementById('num2').value;
+      if(Number(num1)+Number(num2)>10){
+        alert('10보다 큼');
+      } else {
+        alert('10보다 작음');
+      }
+    });
+
+//id, password를 입력 받아서 로그인 버튼을 클릭했을 때, id가 polytech, password가 12341234면
+// alert창에 "로그인 성공"
+// id 혹은 password가 안맞으면 alert "로그인 실패"
+var button1 = document.getElementById('checkButton1');
+button1.addEventListener('click', function(){
+  var id = document.getElementById('id').value;
+  var password = document.getElementById('password').value;
+  if(id=='polytech'&& password=='12341234'){
+    alert('로그인 성공');
+  } else {
+    alert('로그인 실패');
+  }
+});
+
+  </script>
+</html>

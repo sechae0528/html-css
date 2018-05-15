@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      div:hover {
+        color: red;
+      }
+      a:hover {
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="hover">hover</div>
+    <a id="hover1">hover</a>
+  </body>
+  <div>
+  10보다 큰가요?
+   <input type="text" id="number">
+   <input type="button" value="판독" id="button">
+ </div>
+
+
+  <script>
+    var a= 10;
+    console.log(a);
+    for(var i=0; i<10; i++){
+      document.getElementById('hover').innerHTML = i;
+    }
+    
+    var car = {};
+    car.color = "red";
+    car.weight = "100kg";
+    car.kind = "벤츠";
+
+    console.log("1+1=", 1+1);
+    console.log("10+10=", 10+10);
+    console.log("100-60=", 100-60);
+    console.log("7*7=", 7*7);
+    console.log("20/3=", 20/3);
+
+    if (a>5){
+      console.log("big");
+    }else {
+      console.log("small");
+    }
+
+    var clickButton = document.getElementById('button');
+    clickButton.addEventListener('click', function(){
+      var num = document.getElementById('number').value;
+      if(num>10){
+        console.log("10보다 큼");
+      }else {
+        console.log("10보다 작음");
+      }
+    });
+
+
+
+  </script>
+</html>

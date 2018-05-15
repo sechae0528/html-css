@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>웹UI시험</title>
+    <style>
+       span {
+        text-align: center;
+        font-size: 50px;
+        color: blue;
+        display: block;
+      }
+      #btag {
+        font-family: Arial;
+        font-style: italic;
+        color: green;
+      }
+      .ctag {
+        font-weight: 900;
+        color: blue;
+      }
+      #dtag {
+        text-shadow: 7px -7px 5px black;
+      }
+      #etag {
+        text-shadow: 7px -7px 5px black;
+      }
+      .ftag {
+        letter-spacing: 0.8em;
+        color: hotpink;
+      }
+      .htag {
+        background: lightblue;
+      }
+      iv {
+        font-family: bold;
+        color: purple;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- 태그에서 div와 p는 block전체를 의마해서 center를 사용할 때는 태그 이름을 잘 사용해야한다.
+          만약 inline 태그 사용시 block에 대해서 적용하고 싶다면 display : block or inline을 써주면 된다. -->
+    <span>회원가입</span><br><br>
+
+    <bi id ="btag">이름</bi>
+    <input type="text"><br><br>
+    <c class ="ctag">아이디</c>
+    <input type="text">
+    <input type="button" value="중복확인"><br><br>
+    <d id ="dtag">비밀번호</d >
+    <input type="password"><br><br>
+    <e id ="etag">비밀번호 확인</e>
+    <input type="password"><br><br>
+    <f class ="ftag">이메일</f>
+    <input type="text"><br><br>
+    <g>성별(남, 여 중에 한개만 선택가능)
+      남 <input type="radio" name="gender">
+      여 <input type="radio" name="gender"><br><br>
+    </g>
+    <h class ="htag" >
+      휴대폰(SKT, KT, LGT)
+      </h>
+       <select name="" id="">
+          <option value="">SKT</option>
+          <option value="">KT</option>
+          <option value="">LGT</option>
+      </select>
+      <input type="text" placeholder="휴대폰 번호(-제외)">
+      <input type="button" value="인증번호 받기"><br><br>
+      <iv>인증번호</iv>
+      <input type="text">
+      <input type="button" value="인증번호 확인"><br><br>
+
+      <center>
+      <input type="button" value="가입">
+      <input type="button" value="취소">
+      </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

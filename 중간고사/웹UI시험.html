@@ -1,0 +1,63 @@
+<html>
+<head>
+    <style>
+        .title {
+            text-align: center; font-size: 50px; color: blue;
+        }
+        .name {
+            font-family:Arial; font-style: italic; color:green;
+        }
+        .id {
+            font-weight: 900; color: blue;
+        }
+        .pass {
+            text-shadow: 7px -7px 5px black;
+        }
+
+        .email {
+            letter-spacing: 0.8em; color:hotpink;
+        }
+        .phone {
+            background: lightblue;
+        }
+        .auth {
+            font-family:bold; color: purple;
+        }
+        .submit {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="title">회원가입(text-align:center; font-size:50px; color:blue)</div>
+<span class="name">이름(font-family:Arial; font-style: italic; color:green;) </span><input type="text">
+<br><br>
+<span class="id">아이디(font-weight: 900; color: blue;) </span> <input type="text">
+<input type="button" value="중복확인">
+<br><br>
+<span class="pass">비밀번호(text-shadow: 7px -7px 5px black;) </span><input type="password">
+<br><br>
+<span class="pass">비밀번호 확인(text-shadow: 7px -7px 5px black;) </span><input type="password">
+<br><br>
+<span class="email">이메일(letter-spacing: 0.8em; color:hotpink;) </span> <input type="text">
+<br><br>
+성별(남, 여 중에 한개만 선택가능)
+남<input type="radio" name="gender"> 여<input type="radio" name="gender">
+<br><br>
+<span class="phone">휴대폰(SKT, KT, LGT)(background: lightblue;) </span>
+<select>
+    <option>SKT</option>
+    <option>KT</option>
+    <option>LGT</option>
+</select>
+<input type="text" placeholder="휴대폰 번호(-제외)"> <input type="button" value="인증번호 받기">
+<br><br>
+<span class="auth">인증번호(font-family:bold; color: purple;) </span><input type="text"> <input type="button" value="인증번호 확인">
+<br><br>
+<br><br>
+<div class="submit">
+    <input type="button" value="가입">
+    <input type="button" value="취소">
+</div>
+</body>
+</html>
