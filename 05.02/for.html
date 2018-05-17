@@ -11,7 +11,9 @@
   <input type="button" value="button2" id="clickButton2">
   <input type="button" value="button3" id="clickButton3">
   <input type="button" value="button4" id="clickButton4">
-  <input type="button" value="button5" id="clickButton5"><br>
+  <input type="button" value="button5" id="clickButton5">
+  <input type="button" value="button6" id="clickButton6"><br>
+
 
 </body>
 <script>
@@ -50,7 +52,7 @@
     }
   });
 
-  //별찍기
+  //별찍기(홀수갯수로)
   //*
   //***
   //*****
@@ -60,17 +62,50 @@
   var button4 = document.getElementById('clickButton4');
   button4.addEventListener('click', function() {
     var output = "*";
-    console.log(output);
-    for (var i = 0; i <7; i++) {
-      console.log(output +="**");
+    for (var i = 0; i <8; i++) {
+      console.log(output);
+      output +="**";
     }
   });
+
   //방법2
   var button5 = document.getElementById('clickButton5');
   button5.addEventListener('click', function() {
-    for(var i =1; i <=8; i++){
+    for(var i=0; i<8; i++){
       var output = "";
-      for(j=1; j<=i*2-1; j++){
+      for(j=0; j<=i*2+1; j++){
+        output += "*";
+      }
+      console.log(output);
+    }
+  });
+
+ //방법3
+  // var button5 = document.getElementById('clickButton5');
+  // button5.addEventListener('click', function() {
+  //   var output = "*";
+  //   for(var i=0; i <1; i++){
+  //     for(j=1; j<9; j++){
+  //       console.log(output);
+  //       output += "**";
+  //     }
+  //
+  //   }
+  // });
+
+  //***************
+  //*************
+  //***********
+  //*********
+  //*******
+  //*****
+  //***
+  //*
+  var button6 = document.getElementById('clickButton6');
+  button6.addEventListener('click', function() {
+    for(var i=8; i>0; i--){
+      var output = "";
+      for(j=0; j<2*i-1; j++){
         output += "*";
       }
       console.log(output);

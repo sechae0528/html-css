@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+  var cnt = 0;
+  var realCount = 0;
+  for( console.log(1); !console.log(2); console.log(4)){
+    console.log(3);
+    cnt++;
+    console.log("cnt: ", cnt)
+    if(cnt==10) break;
+  }
+
+  // 1
+  // 234 234 234... 2가 false될 때까지
+  for(var i=0; i<10; console.log("안뇽:",2)){
+    i++;
+    console.log(i);
+  }
+  // 1:var i=0;
+  // 2: i<10
+  // 3: console.log(i)
+  // 4: i++
+  // var i = 0;
+  // i<10 console.log(i) i++
+  for(var i=0; i<10; i++){
+    for(var j=0; j<10; j++){
+      realCount++;
+      console.log(i, j);
+    }
+  }
+  console.log(realCount);
+
+  for(var i=0; i<8; i++){
+    var output = "";
+    for(j=0; j<15-2*i; j++){
+      output += "*";
+    }
+    console.log(output);
+  }
+
+
+
+  </script>
+</html>
