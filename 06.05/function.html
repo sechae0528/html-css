@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+<script>
+  //함수//////////////////////////
+  // var hello = function(파라미터){
+  //   몸체
+  //   리턴
+  // }
+  // 리턴뒤에 어떤 값을 집어넣어도 실행되지 않는다. break와 같은개념?
+  var hello = function() {
+    console.log("hello world");
+  }
+  hello();
+
+  var hello1 = function(a, b) {
+    console.log(a);
+    console.log(b);
+    return 0;
+  }
+  //hello1(10, 20);
+  var result;
+
+  //1번
+  result = hello1(20, 10);
+  console.log(result);
+  //2번
+  console.log(hello1(20, 10));
+
+  //두 숫자를 받아서 더하기, 빼기, 곱하기, 나누기, 제곱승을 리턴하는 함수 다섯개를 각각 만들고,
+  //원하는 두 숫자를 넣어 각각의 함수를 실행하고 그 결과값을 콘솔에 찍어보세요.
+
+  //더하기 함수
+  var add = function(a, b) {
+    return a+b;
+  }
+  console.log("더하기: "+ add(1, 2));
+  //빼기 함수
+  var sub = function(a, b) {
+    return a-b;
+  }
+  console.log("빼기: "+ sub(1, 2));
+  //곱하기 함수
+  var mul = function(a, b) {
+    return a*b;
+  }
+  console.log("곱하기: "+ mul(1, 2));
+  //나누기 함수
+  var div = function(a, b) {
+    return a/b;
+  }
+  console.log("나누기: "+ div(1, 2));
+  //제곱 함수1
+  var square = function(a, b) {
+    return Math.pow(a,b);
+  }
+  console.log("제곱1: "+ square(2, 4));
+  //제곱 함수2
+  var square1 = function(a, b) {
+    for(var i=0;i<b;i++){
+      a=a*a;
+    }
+    return a;
+  }
+  console.log("제곱2: "+ square(2, 5));
+
+
+</script>
+
+</html>

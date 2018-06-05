@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // var name0 = "채성은";
+      // var name1 = "윤성호";
+      // var name2 = "최경재";
+      // var name3 = "이한민";
+      // var name4 = "오미진";
+      // var name5 = "정유석";
+      // var nameArr=[];
+      // nameArr[0] = "채성은";
+      // nameArr[1] = "윤성호";
+      // nameArr[2] = "최경재";
+      // nameArr[3] = "이한민";
+      // nameArr[4] = "오미진";
+      // nameArr[5] = "정유석";
+      // for(var i=0;i<5;i++){
+      //   console.log(nameArr[i]);
+      // }
+
+      // var arr1=[1,2,3,4,5,6,7,8,9,10];
+      // var arr2=[0,2,4,6,8,10,12,14,16,18,20];
+
+      var arr1=[];
+      for(var i=1; i<=100; i++){
+        arr1[i-1]=i;
+        //arr1.push(i);
+      }
+      console.log(arr1);
+
+      var arr2=[0];
+      for(var j=0; j<100/2;j++){
+        arr2[j+1]=2*j+2;
+        //arr2.push(j);
+      }
+      console.log(arr2);
+
+      var arrJo=[];
+      for(var i=0; i<100/2+1; i++){
+        arrJo[i] = i*2;
+      }
+      console.log(arrJo)
+
+      var arr3=[];
+      for(var k=0; k<7; k++){
+        //arr3[k]="abc"+(k+1);
+        //arr3[k]=`${"abc"}${k+1}`;
+        arr3[k]=`abc${k+1}`;
+      }
+      console.log(arr3);
+
+      var arr4=[1];
+      var cnt = 1;
+      for(var i=1; i<9; i++){
+        cnt+=3
+        arr4[i] = cnt;
+      }
+      console.log(arr4);
+
+      var arr4Jo=[];
+      for(var i=0; i<9;i++){
+        arr4Jo[i]=i*3+1;
+      }
+      console.log(arr4Jo);
+
+      var arr5=[];
+      var cnt = 2;
+      for(var j=1; j<20; j=j+2){
+
+        arr5[j]= cnt;
+        cnt += 4;
+        //arr2.push(j);
+      }
+      console.log(arr5);
+
+      var arr5Jo = [];
+      for(var i=1; i<10;i+=2){
+        arr5Jo[i]=i*2;
+      }
+      console.log(arr5Jo);
+
+
+
+      // var arr6=[];
+      // for(var i=0 , j=1; i<20, j<20 ; i=i+2, j=i+1 ){
+      //   console.log(i,j);
+      // }
+
+      var arr6=[];
+      var cnt =2;
+      for(var j=0; j<30/2+1; j++){
+        if(j%2==0){
+          arr6[2*j]=cnt;
+          cnt += 2 ;
+        }
+        else{
+          arr6[2*j+1]=0;
+        }
+      }
+      console.log(arr6);
+
+      var arr6Jo=[];
+      for(var i=0;i<16;i++){
+        if(i%2!=0){
+          arr6Jo[i] = i*2;
+        }
+        else{
+          arr6Jo[i]=0;
+        }
+      }
+      console.log(arr6Jo);
+
+
+
+    </script>
+  </body>
+</html>

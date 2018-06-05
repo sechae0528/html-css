@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+    // //1번 문제
+    // for(var i=2; i<1000; i=i*i){
+    //   console.log(i);
+    // }
+    //
+    // //2번 문제
+    // for(var i=0; i<5; i++){
+    //     for(j=3; j<i*2; j=j*1+2){
+    //       console.log(j);
+    //     }
+    // }
+    //
+    // //3번 문제
+    // for(var i=10; i<22; i=i+3){
+    //   for(j=i; j< i+2; j=j+3){
+    //     console.log(j);
+    //   }
+    // }
+
+    //4번 문제
+    // var cnt=0;
+    // for(var i=0; i<7; i++){
+    //   star="*";
+    //   cnt=1;
+    //   for(var j=0; j<i; j++){
+    //     star += star;
+    //     cnt +=cnt
+    //   }
+    //   console.log(star,cnt);
+    // }
+
+    //5번 문제
+    for(var i=1, j=1; i<=9, j<=9 ; i++, j++){
+      console.log(i,j)
+      cnt = '';
+      for(var k=1; k<=9; k++){
+        cnt +=1;
+      }
+      //console.log(i*j*cnt)
+    }
+
+    for(var i=1; i<=9; i++){
+      for(var j=1; j<=9; j++){
+        for(var k=1; k<=9; k++){
+          console.log(`${i}*${j}*${k}=${i*j*k}`);
+          //console.log(i+'*'+j+'*'+k+'='+i*j*k)
+        }
+        //console.log(j)
+      }
+      //console.log(i)
+    }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+  </body>
+</html>

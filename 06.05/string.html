@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript">
+    // var str = "abcdefg";
+    // for(var i=99; i<110;i++){
+    //   var strNum = i+"";
+    //   for(var j=0; j<strNum.length;j++){
+    //     console.log(strNum[j]);
+    //   }
+    //
+    //   //console.log(str[i]);
+    // }
+
+    // for(var i=1; i<150;i++){
+    //   if(i==8 || i==30 || i==130){
+    //     a=1;
+    //   }
+    //   var strNum = i+"";
+    //   for(var j=0;j<strNum.length;j++){
+    //     console.log(strNum[j]);
+    //   }
+    // }
+
+//369게임
+//1~150까지 숫자 찍으면서 369에 해당하는 숫자 뒤에 짝을 출력
+    for(var i=1; i<=150; i++){
+      var strNum = i+"";
+      console.log(i);
+      for(var j=0; j<strNum.length;j++){
+        if(strNum[j]%3==0 && strNum[j]!=0){
+          console.log("짝");
+
+        }
+      }
+    }
+
+
+    // var arr1=[];
+    // for(var i=1; i<=150; i++){
+    //   arr1[i-1]=i;
+    //   //arr1.push(i);
+    // }
+    // console.log(arr1);
+
+
+
+
+  </script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+
+    var star='';
+    for(var i=0; i<8; i++){
+      star='';
+      for(var j=0; j<2*(7-i)+1;j++){
+        star+="☆";
+      }console.log(star)
+    }
+
+    var star1='';
+    for(var a=8; a>0; a--){
+      star1='';
+      for(var b=2*(7+a)-1; b>=a; b--){
+        star1+='☆';
+      }console.log(star1);
+    }
+
+    var star2='';
+    for(var a=8; a>0; a--){
+      star2='';
+      for(var b=0; b<a*2-1; b++){
+        star2+='★';
+      }console.log(star2);
+    }
+
+
+    var star3='';
+    for(var c=0; c<8; c++){
+      star3='';
+      for(var d=0; d<15-c*2; d++){
+        star3 +='♧'
+      }console.log(star3);
+    }
+
+
+
+    </script>
+
+  </body>
+</html>

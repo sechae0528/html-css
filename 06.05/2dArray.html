@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script>
+    //배열은 무조건 선언을 먼저 해줘야 값을 넣을 수 있다!!!
+    //2차원배열//////////////////////////////////////////////
+    var array2D = [];
+    array2D[0] = [];
+    array2D[1] = [];
+    array2D[2] = [];
+    array2D[3] = 10;
+    //[[],[],[], 10]
+    array2D[0][0] = 10;
+    array2D[0][1] = 20;
+    array2D[1][0] = 30;
+    array2D[1][1] = 40;
+
+    console.log(array2D);
+
+    //for문으로 2차원배열 만들어주기 ////////////////////////////
+    var array2D1 = [];
+    array2D1[0] = [];
+    array2D1[1] = [];
+    array2D1[2] = [];
+
+    for(var i=0;i<3;i++){
+      for(var j=0;j<10;j++){
+        array2D1[i][j] = 0;
+      }
+    }
+    console.log(array2D1);
+
+    //예제1 ////////////////////////////////////////////////////
+    var arr1 = [];
+    var a =1;
+    for(var i=0;i<5;i++){
+      arr1[i] = [];
+      for(var j=0;j<5;j++){
+        arr1[i][j] = a;
+        a++;
+      }
+    }
+    console.log(arr1);
+
+    //예제2 //////////////////////////////////////////////////////
+    var arr2 = [];
+    var a =1;
+    for(var i=0;i<5;i++){
+      arr2[i] = [];
+      for(var j=0;j<5;j++){
+        arr2[i][j] = a;
+        a = a+3;
+      }
+    }
+    console.log(arr2);
+
+    //예제3 //////////////////////////////////////////////////////
+    var arr3 = [];
+    for(var i=0;i<5;i++){
+      arr3[i] = [];
+      for(var j=0;j<5;j++){
+        arr3[i][j] = i*j;
+      }
+    }
+    console.log(arr3);
+
+    //예제4 //////////////////////////////////////////////////////
+    var arr4 = [];
+    for(var i=0;i<5;i++){
+      arr4[i] = [];
+      for(var j=0;j<5;j++){
+        arr4[i][j] = i+""+j;
+      }
+    }
+    console.log(arr4);
+  </script>
+</html>
