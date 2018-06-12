@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    id : <input type="text" id="loginId"><br>
+    pass : <input type="text" id="loginPass"><br>
+    <input type="button" value="로그인" id="loginBtn">
+    <input type="button" value="로그인1" id="loginBtn1">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+  //아이디, 비밀번호를 입력받아서 아이디가 polytech, 비밀번호가 1234이면
+  //alert창에 로그인성공, 아니면 로그인실패를 출력하세요.
+  //(로그인 버튼 실행시 function login(id,pass) 함수 작성하여 호출)
+    var loginFunc = function(id2, pass2){
+      if(id2=="polytech" && pass2=='1234'){
+        alert("로그인 성공");
+
+      } else {
+        alert("로그인 실패");
+      }
+    };
+
+    $("#loginBtn").click(function(){
+      var id1 = $('#loginId').val();
+      var pass1 = $('#loginPass').val();
+      console.log(id1,pass1);
+      loginFunc(id1,pass1);
+    });
+
+    //
+    var loginFunc1 = function(id2, pass2){
+      if(id2=="polytech" && pass2=='1234'){
+        return "a";
+
+      } else {
+        return "b";
+      }
+    };
+
+    $("#loginBtn1").click(function(){
+      var id1 = $('#loginId').val();
+      var pass1 = $('#loginPass').val();
+    if(loginFunc1(id1,pass1)=="a"){
+    alert("로그인 성공");
+    }else {
+      alert("로그인 실패");
+    }
+    });
+
+
+
+
+
+
+
+
+
+  </script>
+</html>

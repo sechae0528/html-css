@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" value="추가" id="addButton">
+    <div id="div1"></div>
+
+    <input type="button" value="추가" id="addButton2">
+    <div id="div2"></div>
+
+    <input type="button" value="추가" id="addButton3">
+    <div id="div3"></div>
+
+    아이디
+    <input type="text" id="id"><dr>
+    비밀번호
+    <input type="password" id="password" >
+
+    <input type="button" value="로그인" id="addButton4">
+    <div id="div4"></div>
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+  <script>
+    var button = document.getElementById('addButton');
+    button.addEventListener("click",function(){
+      document.getElementById('div1').innerHTML += "a";
+    });
+
+    //제이쿼리문으로 사용하기
+    $("#addButton2").click(function(){
+      $("#div2").append("a");
+    });
+
+    var i = 10;
+    $("#addButton3").click(function(){
+      $("#div3").html(i);
+      i++
+    });
+
+    //아이디, 비밀번호를 입력받아서 아이디가 polytech, 비밀번호가 1234이면
+    //alert창에 로그인성공, 아니면 로그인실패를 출력하세요.
+    //(로그인 버튼 실행시 function login(id,pass) 함수 작성하여 호출)
+    var login = function(id,pass){
+      if(id=="polytech"&& pass=="1234"){
+        return alert("로그인성공");
+      }else {
+        return alert("로그인실패");
+      }
+    };
+
+    $("#addButton4").click(function(){
+      login($("#id").val(),$("#password").val());
+    });
+
+
+  </script>
+</html>

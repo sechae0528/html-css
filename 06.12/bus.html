@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    지하철1 있음<input type="radio" name="sub1" value="on">없음<input type="radio" name="sub1" value="off"><br>
+    지하철2 있음<input type="radio" name="sub2" value="on">없음<input type="radio" name="sub2" value="off"><br>
+    버스1 있음<input type="radio" name="bus1" value="on">없음<input type="radio" name="bus1" value="off"><br>
+    버스2 있음<input type="radio" name="bus2" value="on">없음<input type="radio" name="bus2" value="off"><br>
+    버스3 있음<input type="radio" name="bus3" value="on">없음<input type="radio" name="bus3" value="off"><br>
+    <br><br>
+    <input type="button" id="checkButton" value="확인버튼">
+    <input type="button" id="checkButton1" value="확인버튼1">
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+    //첫번째 방법
+    $("#checkButton").click(function(){
+      if(($("[name=sub1]")[0].checked==true || $("[name=sub2]")[0].checked==true)
+      && ( $("[name=bus1]")[0].checked==true || $("[name=bus2]")[0].checked==true || $("[name=bus3]")[0].checked==true)){
+        alert("귀가 가능");
+      } else {
+        alert("귀가 불가능");
+      }
+    });
+    //두번째 방법
+    $("#checkButton1").click(function(){
+      if($("[name=sub1]")[0].checked==true || $("[name=sub2]")[0].checked==true){
+        if( $("[name=bus1]")[0].checked==true || $("[name=bus2]")[0].checked==true || $("[name=bus3]")[0].checked==true){
+          alert("귀가 가능");
+        }else {
+          alert("귀가 불가능");
+        }
+      }else {
+        alert("귀가 불가능");
+      }
+
+    });
+
+
+
+  </script>
+</html>

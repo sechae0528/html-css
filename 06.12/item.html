@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="price">
+    <input type="button" value="아이템확인" id="itemBtn">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+    $("#itemBtn").click(function(){
+
+      $.ajax({
+        url:'http://localhost/checkItem?price='+$("#price").val(),
+        data:{},
+        success:function(res){
+          console.log(res);
+        }
+      });
+      console.log("after ajax");
+    });
+
+
+
+
+  </script>
+</html>
