@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <select class="" name="" id="context">
+      <option value="0">안녕하세요</option>
+      <option value="1">반갑습니다</option>
+      <option value="2">감사합니다</option>
+      <option value="3">미안합니다</option>
+      <option value="4">얼마입니까</option>
+    </select>
+    <br>
+    언어 : 영어 <input type="radio" name="lang"> 일어 <input type="radio" name="lang">
+    <input type="button" value="번역" id="translateBtn">
+    <div id="resultArea"></div>
+  </body>
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+
+  $("#translateBtn").click(function(){
+
+    var language;
+    if($("[name=lang]")[0].checked==true){
+      language=0;
+    } else if($("[name=lang]")[1].checked==true){
+      language=1;
+    }
+    $.ajax({
+      url:'http://localhost/checklang?context='+$("#context").val()+'&lang='+language,
+      data:{},
+      success:function(res){
+        $("#resultArea").html(res);
+        console.log(res);
+        //alert(res);
+      }
+    });
+    //console.log("after ajax");
+  });
+
+  </script>
+
+
+
+
+
+
+</html>
