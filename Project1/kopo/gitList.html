@@ -1,0 +1,347 @@
+<html>
+<head>
+        <title>gitList</title>
+       <link rel='stylesheet' href='/css/styleFile.css' />
+    </head>
+    <body>
+    	<ul>
+		  <li><a class="active" href="/">Home</a></li>
+		  <li><a href="/quiz" > Quiz </a></li>
+		  <li><a href="/maps/add">좌표 등록</a></li>
+		  <li><a href="/maps">등록좌표 목록</a></li>
+		  <li><a href="/maps/geomap">지도 화면</a></li>
+		  <li><a href="/maps/chart">파이차트 화면</a></li>
+		  <li><a href="/maps/chartLine">라인차트 화면</a></li>
+				<li><a href="/maps/gitList">git저장소 목록</a></li>
+				 <li><a href="/test">test</a></li>
+		</ul>
+<!--         <div>
+            <a href="/">Home</a> |
+            <a href="/quiz"> Quiz </a> |
+            <a href="/maps/add">Add New Location</a> |
+            <a href="/maps">All Location List</a>  |
+            <a href="/maps/geomap">Geolocation Map</a>  |
+            <a href="/maps/chart">Chart</a>
+        </div>  -->
+        <h1>gitList</h1>
+
+
+
+
+
+
+
+
+<table id = "customers">
+
+    <tr style='text-align:left; background-color:#CCC'>
+            <th>순번</th>
+        <th>학생 이름</th>
+        <th>GIT 주소(뒷부분)</th>
+        <th>수정</th>
+    </tr>
+
+    <!--
+        Using FOREACH LOOP for the maps array
+
+        myArray.forEach(function(el, index) {
+            // el - current element, i - index
+        });
+    -->
+
+
+        <tr id = "gitContents">
+            <td>1</td>
+            <td>KIM GANG RYONG</td>
+            <td>wovmxl</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/1'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>2</td>
+            <td>KIM DO WOON</td>
+            <td>dowoonkim</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/2'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>3</td>
+            <td>KIM EUI JIN</td>
+            <td>doogn</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/3'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>4</td>
+            <td>NOH YOUNG WOO</td>
+            <td>ppoocoder</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/4'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>5</td>
+            <td>PARK SEUNG JIN</td>
+            <td>tmdwls</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/5'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>6</td>
+            <td>SUNG HAN BIN</td>
+            <td>sunghanbin</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/6'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>7</td>
+            <td>SHIN SUNG WOO</td>
+            <td>sinletsgo</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/7'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>8</td>
+            <td>OH MI JIN</td>
+            <td>ohmijin</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/8'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>9</td>
+            <td>LEE DONG GEUN</td>
+            <td>awd45</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/9'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>10</td>
+            <td>LEE WOO SEOK</td>
+            <td>creed35</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/10'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>11</td>
+            <td>LEE EUN SIL</td>
+            <td>milklandcoo</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/11'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>12</td>
+            <td>LEE HAN MIN</td>
+            <td>yumras</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/12'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>13</td>
+            <td>LEE HYO JAE</td>
+            <td>freespa</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/13'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>14</td>
+            <td>JUNG KYUNG HWA</td>
+            <td>JungKH89</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/14'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>15</td>
+            <td>JEONG YU SEOCK</td>
+            <td>jeongyuseoc</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/15'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>16</td>
+            <td>JUNG HYO JAE</td>
+            <td>jamiewell</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/16'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>17</td>
+            <td>CHO DONG YEOK</td>
+            <td>jody0406</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/17'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>18</td>
+            <td>JO JEONG YEON</td>
+            <td>hera7</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/18'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>19</td>
+            <td>CHAE SUNG EUN</td>
+            <td>sechae0528</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/19'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>20</td>
+            <td>CHOI KYUNG JAE</td>
+            <td>ckt9636</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/20'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>21</td>
+            <td>CHOI DONG HUN</td>
+            <td>MakeBelieve</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/21'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>22</td>
+            <td>CHOI MIN SUNG</td>
+            <td>sakurac0</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/22'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>23</td>
+            <td>HA TAE YANG</td>
+            <td>hataeyang</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/23'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>24</td>
+            <td>YOON SUNG HO</td>
+            <td>youtoo1116</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/24'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>25</td>
+            <td>KIM JI SUNG</td>
+            <td>binggugu</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/25'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+        <tr id = "gitContents">
+            <td>26</td>
+            <td>CHOI MIN HAN</td>
+            <td>do not submit</td>
+            <td>
+                <div style="float:left">
+                    <a href='/maps/editgit/26'>Edit</a> &nbsp;
+                </div>
+            </td>
+        </tr>
+
+
+
+</table>
+
+<!--
+including footer content which is common for all pages
+-->
+</body>
+</html>

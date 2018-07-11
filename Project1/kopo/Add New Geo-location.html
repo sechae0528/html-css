@@ -1,0 +1,60 @@
+<html>
+<head>
+        <title>Add New Geo-location</title>
+       <link rel='stylesheet' href='/css/styleFile.css' />
+    </head>
+    <body>
+    	<ul>
+		  <li><a class="active" href="/">Home</a></li>
+		  <li><a href="/quiz" > Quiz </a></li>
+		  <li><a href="/maps/add">좌표 등록</a></li>
+		  <li><a href="/maps">등록좌표 목록</a></li>
+		  <li><a href="/maps/geomap">지도 화면</a></li>
+		  <li><a href="/maps/chart">파이차트 화면</a></li>
+		  <li><a href="/maps/chartLine">라인차트 화면</a></li>
+				<li><a href="/maps/gitList">git저장소 목록</a></li>
+				 <li><a href="/test">test</a></li>
+		</ul>
+<!--         <div>
+            <a href="/">Home</a> |
+            <a href="/quiz"> Quiz </a> |
+            <a href="/maps/add">Add New Location</a> |
+            <a href="/maps">All Location List</a>  |
+            <a href="/maps/geomap">Geolocation Map</a>  |
+            <a href="/maps/chart">Chart</a>
+        </div>  -->
+        <h1>Add New Geo-location</h1>
+
+
+
+
+
+
+
+
+<form action="/maps/add" method="post" name="form1">
+    <table width="25%" border="0">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="geo_name" id="name" value="" /></td>
+        </tr>
+        <tr>
+            <td>longitude</td>
+            <td><input type="text" name="longitude" value="" /></td>
+        </tr>
+        <tr>
+            <td>latitude</td>
+            <td><input type="text" name="latitude" value="" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="Submit" value="Add" /></td>
+        </tr>
+    </table>
+</form>
+
+<!--
+including footer content which is common for all pages
+-->
+</body>
+</html>

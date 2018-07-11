@@ -21,3 +21,4 @@ app.get('/getCarPrice', function (req, res) {
  var result = carPrice[car] + colorPrice[color] ;
   res.send(result+"만원");
 });
+/

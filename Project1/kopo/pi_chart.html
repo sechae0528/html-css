@@ -1,0 +1,78 @@
+<html>
+<head>
+        <title>chart</title>
+       <link rel='stylesheet' href='/css/styleFile.css' />
+    </head>
+    <body>
+    	<ul>
+		  <li><a class="active" href="/">Home</a></li>
+		  <li><a href="/quiz" > Quiz </a></li>
+		  <li><a href="/maps/add">좌표 등록</a></li>
+		  <li><a href="/maps">등록좌표 목록</a></li>
+		  <li><a href="/maps/geomap">지도 화면</a></li>
+		  <li><a href="/maps/chart">파이차트 화면</a></li>
+		  <li><a href="/maps/chartLine">라인차트 화면</a></li>
+				<li><a href="/maps/gitList">git저장소 목록</a></li>
+				 <li><a href="/test">test</a></li>
+		</ul>
+<!--         <div>
+            <a href="/">Home</a> |
+            <a href="/quiz"> Quiz </a> |
+            <a href="/maps/add">Add New Location</a> |
+            <a href="/maps">All Location List</a>  |
+            <a href="/maps/geomap">Geolocation Map</a>  |
+            <a href="/maps/chart">Chart</a>
+        </div>  -->
+        <h1>chart</h1>
+
+
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+var jsonData = [{"product":"PRODUCT12","sum_avg":225598.5},{"product":"PRODUCT14","sum_avg":22567.30769230769},{"product":"PRODUCT2","sum_avg":48481.32692307692},{"product":"PRODUCT33","sum_avg":15117.615384615385},{"product":"PRODUCT34","sum_avg":127093.40384615384},{"product":"PRODUCT4","sum_avg":30076.30769230769},{"product":"PRODUCT47","sum_avg":13619.711538461539},{"product":"PRODUCT58","sum_avg":54218.942307692305},{"product":"PRODUCT59","sum_avg":762228.9423076923},{"product":"PRODUCT62","sum_avg":13751.25},{"product":"PRODUCT63","sum_avg":45025.42307692308},{"product":"PRODUCT75","sum_avg":29487.75}];
+var googledata = new google.visualization.DataTable();
+googledata.addColumn('string', 'product');
+googledata.addColumn('number', 'sum avg');
+
+for (var i = 0; i < jsonData.length; i++) {
+    product = jsonData[i].product;
+    sum_avg = jsonData[i].sum_avg;
+    googledata.addRow([product, sum_avg]);
+}
+
+//var dataTableData = google.visualization.arrayToDataTable(googledata);
+
+// var data = google.visualization.arrayToDataTable([
+// ['Task', 'Hours per Day'],
+// ['Study', 11],
+// ['Eat', 2],
+// ['Play2', 2],
+// ['Play game', 2],
+// ['Sleep', 7]
+// ]);
+
+var options = {
+    title: 'A01지역 2016년도 이후 상품/주차별 평균 판매량 (만건 이상)'
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+chart.draw(googledata, options);
+}
+</script>
+<div id='piechart' style="width: 1020px; height: 650px;"></div>
+
+<!-- <script type="text/javascript">
+    ///setTimeout("location.reload()",6000)
+</script>  -->
+<!--
+including footer content which is common for all pages
+-->
+</body>
+</html>

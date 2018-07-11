@@ -1,0 +1,86 @@
+<html>
+<head>
+        <title>chart</title>
+       <link rel='stylesheet' href='/css/styleFile.css' />
+    </head>
+    <body>
+    	<ul>
+		  <li><a class="active" href="/">Home</a></li>
+		  <li><a href="/quiz" > Quiz </a></li>
+		  <li><a href="/maps/add">좌표 등록</a></li>
+		  <li><a href="/maps">등록좌표 목록</a></li>
+		  <li><a href="/maps/geomap">지도 화면</a></li>
+		  <li><a href="/maps/chart">파이차트 화면</a></li>
+		  <li><a href="/maps/chartLine">라인차트 화면</a></li>
+				<li><a href="/maps/gitList">git저장소 목록</a></li>
+				 <li><a href="/test">test</a></li>
+		</ul>
+<!--         <div>
+            <a href="/">Home</a> |
+            <a href="/quiz"> Quiz </a> |
+            <a href="/maps/add">Add New Location</a> |
+            <a href="/maps">All Location List</a>  |
+            <a href="/maps/geomap">Geolocation Map</a>  |
+            <a href="/maps/chart">Chart</a>
+        </div>  -->
+        <h1>chart</h1>
+
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["line"]});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+var jsonData = [{"item":"ITEM0115","yearweek":"201631","prediction_qty":2240,"real_qty":1522},{"item":"ITEM0115","yearweek":"201632","prediction_qty":2240,"real_qty":2100},{"item":"ITEM0115","yearweek":"201633","prediction_qty":138.5,"real_qty":43},{"item":"ITEM0115","yearweek":"201634","prediction_qty":1462.6666666666667,"real_qty":1700},{"item":"ITEM0115","yearweek":"201635","prediction_qty":1462.6666666666667,"real_qty":1514},{"item":"ITEM0115","yearweek":"201636","prediction_qty":1462.6666666666667,"real_qty":1501},{"item":"ITEM0115","yearweek":"201637","prediction_qty":1462.6666666666667,"real_qty":1491},{"item":"ITEM0115","yearweek":"201638","prediction_qty":1462.6666666666667,"real_qty":806},{"item":"ITEM0115","yearweek":"201639","prediction_qty":2240,"real_qty":2111},{"item":"ITEM0115","yearweek":"201640","prediction_qty":2240,"real_qty":2400},{"item":"ITEM0115","yearweek":"201641","prediction_qty":2240,"real_qty":2010},{"item":"ITEM0115","yearweek":"201642","prediction_qty":2240,"real_qty":1900},{"item":"ITEM0115","yearweek":"201643","prediction_qty":230,"real_qty":141},{"item":"ITEM0115","yearweek":"201644","prediction_qty":1462.6666666666667,"real_qty":1615},{"item":"ITEM0115","yearweek":"201645","prediction_qty":1462.6666666666667,"real_qty":1574},{"item":"ITEM0115","yearweek":"201646","prediction_qty":2585.6666666666665,"real_qty":1800},{"item":"ITEM0115","yearweek":"201647","prediction_qty":2585.6666666666665,"real_qty":2600},{"item":"ITEM0115","yearweek":"201648","prediction_qty":2585.6666666666665,"real_qty":2412},{"item":"ITEM0115","yearweek":"201649","prediction_qty":1758,"real_qty":1955},{"item":"ITEM0115","yearweek":"201650","prediction_qty":1758,"real_qty":1800},{"item":"ITEM0115","yearweek":"201651","prediction_qty":1758,"real_qty":1173},{"item":"ITEM0115","yearweek":"201652","prediction_qty":1758,"real_qty":332}];
+var googledata = new google.visualization.DataTable();
+//googledata.addColumn('string', 'item');
+googledata.addColumn('string', 'yearweek');
+googledata.addColumn('number', 'prediction_qty');
+googledata.addColumn('number', 'real_qty');
+
+for (var i = 0; i < jsonData.length; i++) {
+    //item = jsonData[i].item;
+    yearweek = jsonData[i].yearweek;
+    prediction = jsonData[i].prediction_qty;
+    qty = jsonData[i].real_qty;
+    googledata.addRow([yearweek, prediction, qty]);
+}
+
+//var dataTableData = google.visualization.arrayToDataTable(googledata);
+
+// var data = google.visualization.arrayToDataTable([
+// ['Task', 'Hours per Day'],
+// ['Study', 11],
+// ['Eat', 2],
+// ['Play2', 2],
+// ['Play game', 2],
+// ['Sleep', 7]
+// ]);
+
+var options = {
+        chart: {
+          title: 'Regression result (Decision Tree)',
+          subtitle: 'AWS(MySQL)-Result'
+        },
+        width: 900,
+        height: 500
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(googledata, google.charts.Line.convertOptions(options));
+}
+</script>
+<script type="text/javascript">
+    ///setTimeout("location.reload()",6000)
+</script>
+<div id="linechart_material" style="width: 900px; height: 500px"></div>
+
+<!--
+including footer content which is common for all pages
+-->
+</body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+<head>
+        <title></title>
+       <link rel='stylesheet' href='/css/styleFile.css' />
+    </head>
+    <body>
+    	<ul>
+		  <li><a class="active" href="/">Home</a></li>
+		  <li><a href="/quiz" > Quiz </a></li>
+		  <li><a href="/maps/add">좌표 등록</a></li>
+		  <li><a href="/maps">등록좌표 목록</a></li>
+		  <li><a href="/maps/geomap">지도 화면</a></li>
+		  <li><a href="/maps/chart">파이차트 화면</a></li>
+		  <li><a href="/maps/chartLine">라인차트 화면</a></li>
+				<li><a href="/maps/gitList">git저장소 목록</a></li>
+				 <li><a href="/test">test</a></li>
+		</ul>
+<!--         <div>
+            <a href="/">Home</a> |
+            <a href="/quiz"> Quiz </a> |
+            <a href="/maps/add">Add New Location</a> |
+            <a href="/maps">All Location List</a>  |
+            <a href="/maps/geomap">Geolocation Map</a>  |
+            <a href="/maps/chart">Chart</a>
+        </div>  -->
+        <h1></h1>
+
+
+
+    <table id="table" border="2">
+
+    </table>
+    <br>
+    <input type="button" name="" value="랜덤 자리 배치" id="button">
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+$("#button").click(function(){
+
+   $("#table").html("")
+
+    var random_text = ["채성은", "윤성호", "최경재", "이한민", "오미진", "정유석"
+  , "최동훈", "정경화","최민성","이은실","성한빈","김의진","조동역","이우석","하태양"
+  , "박승진", "정효재", "노영우", "김지성","이동근","최민한"
+  , "김도운", "이효재"];
+      function rndText(){
+         var result = Math.floor(Math.random()*(random_text.length));
+         return random_text[result];
+       }
+
+    var ranArr = [];
+       for(var i = 0; i < random_text.length; i++){
+             ranArr[i] = rndText();
+             // 사원번호 중복체크
+             for(var j = 0; j < i; j++ ){
+                 // 이전값과 비교하여 중복일경우 random 값 다시 생성
+                 if(ranArr[i] == ranArr[j]){
+                     i = i - 1;
+                     break;
+                 }
+             }
+         }
+      // console.log(ranArr);
+      // console.log(ranArr[1]);
+      // console.log(ranArr[1+1]);
+    var seat = 5;
+    for (var i = 0; i < seat; i++) {
+    if (i == 0) {
+        $("#table").append("<tr>"
+        + "<td> "+ ranArr[13] + "</td> "
+        + "<td> "+ ranArr[14] + "</td> "
+        + "<td> "+ ranArr[15] + "</td> "
+        + "<td> "+ ranArr[16] + "</td> "
+        + "<td> "+ ranArr[17] + "</td> "
+        + "<td> "+ ranArr[18]+ "</td> "
+        +"</tr>" )
+      }
+      else if (i == 1) {
+        $("#table").append("<tr>"
+        + "<td> "+ ranArr[0] + "</td> "
+        + "<td> "+ ranArr[1] + "</td> "
+        + "<td> "+ "신성우" + "</td> "
+        + "<td> "+ ranArr[2] + "</td> "
+        + "<td> "+ ranArr[3] + "</td> "
+        + "<td> "+ ranArr[4] + "</td> "
+        +"</tr>" )
+      } else if (i == 2) {
+        $("#table").append("<tr>"
+        + "<td> "+ "Tv" + "</td> "
+        + "<td> "+ ranArr[5] + "</td> "
+        + "<td> "+ ranArr[6]+ "</td> "
+        + "<td> "+ ranArr[7] + "</td> "
+        + "<td> "+ ranArr[8] + "</td> "
+        + "<td> "+ ranArr[9] + "</td> "
+        +"</tr>" )
+      } else if (i == 3) {
+        $("#table").append("<tr>"
+        + "<td> "+ ranArr[19] + "</td> "
+        + "<td> "+ "김강용" + "</td> "
+        + "<td> "+ "조정연" + "</td> "
+        + "<td> "+ ranArr[20] + "</td> "
+        + "<td> "+ ranArr[21] + "</td> "
+        + "<td> "+ ranArr[22]+ "</td> "
+        +"</tr>" )
+      } else if (i == 4) {
+        $("#table").append("<tr>"
+        + "<td> "+ "x" + "</td> "
+        + "<td> "+ ranArr[10] + "</td> "
+        + "<td> "+ "x" + "</td> "
+        + "<td> "+ "x" + "</td> "
+        + "<td> "+ ranArr[11] + "</td> "
+        + "<td> "+ ranArr[12] + "</td> "
+        +"</tr>" )
+      }
+
+    }
+
+    })
+
+
+
+
+
+  // 배열(홍길동, 이순신, 김유신) 에서 랜덤하게 하나를 선택하는 프로그램을 작성하세요
+
+
+  </script>
+<!--
+including footer content which is common for all pages
+-->
+</body>
+</html>

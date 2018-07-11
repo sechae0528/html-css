@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>googleChart</title>
+  </head>
+  <body>
+    <h1>chart</h1>
+
+    <div id='chart_div' style="width: 1020px; height: 650px;"></div>
+
+  </body>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+  //라이브러리 load
+  google.charts.load("current", {packages:["corechart",'line']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  ///////////////////////////////////
+  //데이터 setting
+  function drawChart() {
+
+  // var jsonData = [{"product":"PRODUCT12","sum_avg":225598.5},{"product":"PRODUCT14","sum_avg":22567.30769230769},{"product":"PRODUCT2","sum_avg":48481.32692307692},{"product":"PRODUCT33","sum_avg":15117.615384615385},{"product":"PRODUCT34","sum_avg":127093.40384615384},{"product":"PRODUCT4","sum_avg":30076.30769230769},{"product":"PRODUCT47","sum_avg":13619.711538461539},{"product":"PRODUCT58","sum_avg":54218.942307692305},{"product":"PRODUCT59","sum_avg":762228.9423076923},{"product":"PRODUCT62","sum_avg":13751.25},{"product":"PRODUCT63","sum_avg":45025.42307692308},{"product":"PRODUCT75","sum_avg":29487.75}];
+  // var googledata = new google.visualization.DataTable();
+  // googledata.addColumn('string', 'product');
+  // googledata.addColumn('number', 'sum avg');
+  //
+  // for (var i = 0; i < jsonData.length; i++) {
+  //     product = jsonData[i].product;
+  //     sum_avg = jsonData[i].sum_avg;
+  //     googledata.addRow([product, sum_avg]);
+  // }
+  //
+  //
+  // var options = {
+  //     title: 'A01지역 2016년도 이후 상품/주차별 평균 판매량 (만건 이상)'
+  //     // vAxis: {title: 'Cups'},  //y축
+  //     // hAxis: {title: 'Month'}, //x축
+  //     // seriesType: 'bars', //타입
+  //     // series: {5: {type:'line'}} //각각의 그래프에 대해 타입설
+  // };
+  //
+  // //차트그리기
+  // var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  //PieChart 변경가능 (ComboChart)
+  //chart.draw(googledata, options);
+
+  var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Dogs');
+      data.addColumn('number', 'Cats');
+
+      data.addRows([
+        [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Time'
+        },
+        vAxis: {
+          title: 'Popularity'
+        },
+        series: {
+          1: {curveType: 'function'}
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+  }
+/////////////////////////////////////////////
+  </script>
+
+</html>

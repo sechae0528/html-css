@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+        <h1> Google-Map </h1>
+        <button onClick="getLocation();">현재위치 찾기</button>
+        크롬불가/익스플로러만 가능함 (http 제약)
+        <table width="25%" border="0">
+        <tr>
+            <td>longitude</td>
+            <td><input type="text" id = "longid" name="longitude" /></td>
+        </tr>
+        <tr>
+            <td>latitude</td>
+            <td><input type="text" id = "latid" name="latitude" /></td>
+        </tr>
+    </table>
+    <p></p>
+    <div id="map"></div>
+    <script>
+
+    var data = [{"id":6,"geo_name":"polytech_kangseo2","lng":126.840918,"lat":37.549506},{"id":5,"geo_name":"coffeekorea_seulleng","lng":127.0478832,"lat":37.50567504}];
+
+    function initMap() {
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 7,
+        center: {lat: 35.5, lng: 128.0}
+      });
+      var markers = data.map(function(location, i) {
+        return new google.maps.Marker({
+          position: {lat:location.lat, lng:location.lng},
+          label: location.geo_name
+        });
+      });
+
+      var markerCluster = new MarkerClusterer(map, markers,
+          {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      getLocation();
+      }
+
+  function getLocation() {
+  if (navigator.geolocation) { // GPS를 지원하면
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+
+      alert(position.coords.latitude + ' ' + position.coords.longitude);
+      document.getElementById("longid").value = position.coords.longitude;
+      document.getElementById("latid").value = position.coords.latitude; 
+    }, function(error) {
+      console.error(error);
+    }, {
+      enableHighAccuracy: false,
+      maximumAge: 0,
+      timeout: Infinity
+    });
+  } else {
+    alert('GPS를 지원하지 않습니다');
+  }
+}
+
+
+
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC408916GC1HdZlKEV1h0UVbgRkKp4ZKYw
+&callback=initMap">
+    </script>
+  </body>
+</html>
