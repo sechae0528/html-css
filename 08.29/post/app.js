@@ -22,7 +22,7 @@ app.post('/getOrPost', function (req, res) {
 });
 
 app.get('/getOrPost', function (req, res) {
-  console.log(req.body.inputText1, req.body.inputText2);
+  console.log(req.query.inputText1, req.query.inputText2);
   res.send('get');
 });
 

@@ -15,8 +15,9 @@
   $("#getButton").click(function(){
       $.ajax({
       type: 'GET',
-      url: `/getOrPost?inputText1=${$("#inputText1").val()}&inputText2=${$("#inputText1").val()}`,
+      url: '/getOrPost?inputText1='+$("#inputText1").val()+'&inputText2='+ $("#inputText2").val(),
       success:function(res){
+        alert(res);
       }
     });
     });
@@ -28,9 +29,10 @@
       data:
         {
           inputText1 : $("#inputText1").val(),
-          inputText2 : $("#inputText1").val()
+          inputText2 : $("#inputText2").val()
         },
       success:function(res){
+        alert(res);
       }
     });
       });
