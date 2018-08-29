@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" id="inputText1"><br>
+    <input type="text" id="inputText2"><br>
+    <input type="button" value="GET" id="getButton">
+    <input type="button" value="POST" id="postButton">
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+  $("#getButton").click(function(){
+      $.ajax({
+      type: 'GET',
+      url: `/getOrPost?inputText1=${$("#inputText1").val()}&inputText2=${$("#inputText1").val()}`,
+      success:function(res){
+      }
+    });
+    });
+
+    $("#postButton").click(function(){
+      $.ajax({
+      type: 'POST',
+      url: '/getOrPost',
+      data:
+        {
+          inputText1 : $("#inputText1").val(),
+          inputText2 : $("#inputText1").val()
+        },
+      success:function(res){
+      }
+    });
+      });
+  </script>
+</html>

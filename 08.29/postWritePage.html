@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>글쓰기</title>
+    </head>
+    <body>
+        글쓴이 : <input type="text" id="writer">
+        글제목 : <input type="text" id="title"><br><br>
+        내  용 : <textarea cols="30" rows="10" id="context"></textarea><br><br>
+        <input type="button" value="글쓰기" id="writeButton"> <input type="button" value="목록으로" id="toListButton">
+    </body>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $("#writeButton").click(function(){
+	        $.ajax({
+		        type: 'POST',
+		        url: '/writePost',
+		        data:
+			        {
+				        writer:$("#writer").val(),
+				        title:$("#title").val(),
+				        context:$("#context").val()
+			        },
+		        success: function(res) {
+			        if(res=="success") {
+				        alert("글이 등록되었습니다");
+				        location.href = "/postListPage";
+			        }
+			        else {
+				        alert("글쓰기 실패");
+			        }
+		        }
+	        });
+
+        });
+        $("#toListButton").click(function(){
+            location.href = "/postListPage";
+        });
+    </script>
+</html>

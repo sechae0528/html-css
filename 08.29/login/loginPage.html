@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>로그인페이지</title>
+  </head>
+  <body>
+    id : <input type="text" id="loginid"><br>
+    pass : <input type="text" id="pass"><br>
+    <input type="button" value="로그인" id="loginButton">
+    <input type="button" value="회원가입 페이지로" id="gotosiginPageButton">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+
+  $("#loginButton").click(function(){
+
+    $.ajax({
+      type: 'GET',
+      url: '/login?id='+$("#loginid").val() +'&pass='+ $("#pass").val(),
+      success:function(res){
+        alert(res);
+        console.log(res);
+      }
+    });
+    });
+
+    $("#gotosiginPageButton").click(function(){
+        location.href = '/signinPage';
+      });
+
+  </script>
+</html>

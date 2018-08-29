@@ -1,0 +1,31 @@
+
+<html>
+    <head>
+        <title>글상세</title>
+    </head>
+    <body>
+        글번호 : <span id="no"></span><br>
+        글쓴이 : <span id="writer"></span><br>
+        제목 : <span id="title"></span><br>
+        내용 : <span id="context"></span><br>
+        <input type="button" value="목록으로" id="toListButton">
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+	    var no = location.href.split("?")[1];
+
+	    $.ajax({
+		    type: 'GET',
+		    url: '/getPost?no=' + no,
+		    success: function(res) {
+          $("#no").html(res[0].no);
+			    $("#writer").html(res[0].writer);
+			    $("#title").html(res[0].title);
+			    $("#context").html(res[0].context);
+		    }
+	    });
+	    $("#toListButton").click(function(){
+		    location.href = "/postListPage";
+	    });
+    </script>
+</html>

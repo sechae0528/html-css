@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>글목록</title>
+    </head>
+    <body>
+        <div id="postList"></div>
+        <input type="button" value="글쓰러가기" id="goToWritePostPaqe">
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+	    $.ajax({
+		    type: 'GET',
+		    url: '/getPostList',
+		    success: function(res) {
+		    	for(var i=0;i<res.length;i++){
+		    	    $("#postList").append(`${res[i].no}. ${res[i].writer} : <a href="/postDetailPage?${res[i].no}"> ${res[i].title} </a>  <br>`)
+                }
+		    }
+	    });
+
+	    $("#goToWritePostPaqe").click(function(){
+		    location.href = "/writePostPage";
+	    });
+    </script>
+</html>

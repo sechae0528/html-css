@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>번호로 이름 불러오기</title>
+  </head>
+  <body>
+    no : <input type="text" id="no"><br>
+    <input type="button" value="이름가져오기" id="getNameByPageButton">
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+    var no = location.href.split("?")[1];
+    $.ajax({
+      type: 'GET',
+      url: '/getNameByNo?no='+no,
+      success:function(res){
+        console.log(res[0].name);
+      }
+    });
+
+    $("#gotoLoginPageButton").click(function(){
+        location.href = '/loginPage';
+      });
+
+  </script>
+</html>
