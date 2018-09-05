@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="postList"></div>
+    <input type="button" value="버튼" id="clickButton">
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $("#clickButton").click(function(){
+
+      setInterval(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/timePost',
+          success: function(res) {
+            setTimeout(function(){
+              console.log("시작");
+            $("#postList").html(res[0].cnt);
+            },3000);
+          }
+        });
+        console.log("실행중");
+      },1000);
+  });
+
+  // setTimeout(function(){
+  //   console.log("hello world");
+  // },3000);
+  //
+  // var i=0;
+  // setInterval(function(){
+  //   console.log("hello world"+i);
+  //   i++;
+  // },1000);
+
+
+
+
+  </script>
+</html>

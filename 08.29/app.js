@@ -21,6 +21,42 @@ var connection = mysql.createConnection({
   , database : 'test'
 });
 
+app.get('/time', function (req, res) {
+  res.sendfile('time.html');
+});
+
+//`update \`count\` set cnt=cnt+${req.body.i} where 1=1`;
+//글쓰기
+app.get('/timePost', function (req, res) {
+  var updateQuery = `update \`count\` set cnt=cnt+1 where 1=1`;
+  var selectQuery = `select * from count`;
+  connection.query(updateQuery,
+    function (err, rows, fields) {
+      if (err) throw err;
+      connection.query(selectQuery,
+        function (err, rows, fields) {
+          if (err) throw err;
+          res.send(rows)
+          }
+        )
+      }
+    )
+    //res.send("success");
+});
+// 
+// app.get('/timeGet', function (req, res) {
+//   var selectQuery = `select * from count`;
+//   connection.query(selectQuery,
+//     function (err, rows, fields) {
+//       if (err) throw err;
+//       res.send(rows)
+//       }
+//     )
+// });
+
+
+
+
 //글목록
 app.get('/postListPage', function (req, res) {
   res.sendfile('postListPage.html');
@@ -39,13 +75,15 @@ app.get('/postDetailPage', function (req, res) {
 
 //글쓰기
 app.post('/writePost', function (req, res) {
-  var insertQuery = `insert into post (writer, title, context) values ('${req.body.writer}','${req.body.title}','${req.body.context}')`;
+  var insertQuery = `insert into post (\`writer\`, title, context) values ('${req.body.writer}','${req.body.title}','${req.body.context}')`;
   connection.query(insertQuery,
     function (err, rows, fields) {
       if (err) throw err;
+
+      res.send("success");
       }
     )
-    res.send("success");
+    //res.send("success");
 });
 
 //글목록

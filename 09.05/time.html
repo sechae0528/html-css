@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="count"> <div>
+    <input type="button" value="시작" id="startB">
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+  // 버튼을 클릭했을 때 3초 후에 1초 간격으로 데이터베이스에 cnt를 증가시키고
+  // 새로운 cnt를 받아와서 화면에 뿌려준다
+
+
+    // $("#startB").click(function(){
+    //   $.ajax({
+    //     type: 'GET',
+    //     url: '/countcnt',
+    //     success:function(res){
+    //       setTimeout(function(){
+    //         console.log("시작");
+    //         setInterval(function(){
+    //           $("#count").html(res[0].cnt);
+    //           console.log("실행중");
+    //         }, 1000);
+    //       },3000);
+    //
+    //
+    //     }
+    //   });
+    // })
+
+    $("#startB").click(function(){
+
+      setInterval(function(){
+        $.ajax({
+          type: 'GET',
+          url: '/countcnt',
+          success:function(res){
+            setTimeout(function(){
+              console.log("시작");
+              $("#count").html(res[0].cnt);
+            },3000);
+          }
+        });
+        console.log("실행중");
+      }, 1000);
+
+    })
+
+
+
+    </script>
+</html>
