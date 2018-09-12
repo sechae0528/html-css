@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배열다루기</title>
+  </head>
+  <body>
+    <div id="arrayList"></div>
+    <input type="text" id="t1">
+    <input type="button" value="push" id="pushBtn">
+    <input type="button" value="pop" id="popBtn">
+    <input type="button" value="shift" id="shiftBtn">
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    var a = []
+    //$("#t1").focus();
+    $(document).ready(function(){
+      $("#t1").focus();
+    });
+
+    $("#pushBtn").click(function(){
+      a.push($("#t1").val()+" ");
+      $("#t1").val("");
+      $("#t1").focus();
+      //$("#arrayList").html(a);
+      drawArrayToDiv(a);
+    });
+
+    $("#popBtn").click(function(){
+      a.pop();
+      //$("#arrayList").html(a);
+      drawArrayToDiv(a);
+      $("#t1").val("");
+
+    });
+
+    $("#shiftBtn").click(function(){
+      a.shift();
+      //$("#arrayList").html(a);
+      drawArrayToDiv(a);
+      $("#t1").val("");
+
+    });
+
+    var drawArrayToDiv = function(a){
+      $("#arrayList").html(a);
+    }
+
+    $("#t1").keypress(function(event){
+      if(event.which==13){
+        $("#pushBtn").click();
+      }
+    });
+
+  </script>
+</html>

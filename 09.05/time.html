@@ -5,14 +5,16 @@
     <title></title>
   </head>
   <body>
-    <div id="postList"></div>
-    <input type="button" value="버튼" id="clickButton">
+    <div id="postList1"></div>
+    <input type="button" value="시작1" id="clickButton1">
+    <div id="postList2"></div>
+    <input type="button" value="시작2" id="clickButton2">
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
 
 //버튼을 누르면 3초 뒤에 데이터베이스에 있는 숫자가 1초에 1씩증가하면서 화면에 보여지기
-    $("#clickButton").click(function(){
+    $("#clickButton1").click(function(){
   setTimeout(function(){
     setInterval(function(){
     $.ajax({
@@ -20,13 +22,35 @@
       url: '/timePost',
       success: function(res) {
           //console.log("시작");
-        $("#postList").html(res[0].cnt);
+        $("#postList1").html(res[0].cnt);
       }
     });
     },1000);
 
-  },3000);
+  },2000);
   });
+
+
+  $("#clickButton2").click(function(){
+setTimeout(function(){
+  setInterval(function(){
+  $.ajax({
+    type: 'GET',
+    url: '/updateCount',
+    success: function(res) {
+        $.ajax({
+          type: 'GET',
+          url: '/getCount',
+          success: function(res) {
+            $("#postList2").html(res[0].cnt);
+          }
+        });
+    }
+  });
+  },1000);
+
+},2000);
+});
 
   // setTimeout(function(){
   //   console.log("hello world");
