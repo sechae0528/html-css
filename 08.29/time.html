@@ -10,21 +10,22 @@
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-  $("#clickButton").click(function(){
 
-      setInterval(function(){
-        $.ajax({
-          type: 'GET',
-          url: '/timePost',
-          success: function(res) {
-            setTimeout(function(){
-              console.log("시작");
-            $("#postList").html(res[0].cnt);
-            },3000);
-          }
-        });
-        console.log("실행중");
-      },1000);
+//버튼을 누르면 3초 뒤에 데이터베이스에 있는 숫자가 1초에 1씩증가하면서 화면에 보여지기
+    $("#clickButton").click(function(){
+  setTimeout(function(){
+    setInterval(function(){
+    $.ajax({
+      type: 'GET',
+      url: '/timePost',
+      success: function(res) {
+          //console.log("시작");
+        $("#postList").html(res[0].cnt);
+      }
+    });
+    },1000);
+
+  },3000);
   });
 
   // setTimeout(function(){
@@ -36,9 +37,5 @@
   //   console.log("hello world"+i);
   //   i++;
   // },1000);
-
-
-
-
   </script>
 </html>

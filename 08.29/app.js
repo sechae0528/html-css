@@ -21,12 +21,14 @@ var connection = mysql.createConnection({
   , database : 'test'
 });
 
+
+//time
 app.get('/time', function (req, res) {
   res.sendfile('time.html');
 });
 
 //`update \`count\` set cnt=cnt+${req.body.i} where 1=1`;
-//글쓰기
+//time
 app.get('/timePost', function (req, res) {
   var updateQuery = `update \`count\` set cnt=cnt+1 where 1=1`;
   var selectQuery = `select * from count`;
@@ -43,17 +45,6 @@ app.get('/timePost', function (req, res) {
     )
     //res.send("success");
 });
-// 
-// app.get('/timeGet', function (req, res) {
-//   var selectQuery = `select * from count`;
-//   connection.query(selectQuery,
-//     function (err, rows, fields) {
-//       if (err) throw err;
-//       res.send(rows)
-//       }
-//     )
-// });
-
 
 
 
