@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    -출발-
+    <div id="flightList1"></div><br>
+    -예정-
+    <div id="flightList2"></div><br><br>
+    <input type="button" value="항공편 입력 페이지로" id="goToWritePaqe"><br>
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+
+  setInterval(function(){
+    $("#flightList1").html("");
+      $.ajax({
+        type: 'GET',
+        url: '/getFlightList1',
+        success: function(res) {
+            for(let i=0;i<res.length;i++){
+              setTimeout(function(){
+                $("#flightList1").append(`${res[i].flightName} ${res[i].departure} ${res[i].destination} ${res[i].departTime}  ${res[i].arrivalTime} ${res[i].aircraftName} ${res[i].seats}<br>`)
+              },i*100);
+            }
+        }
+    });
+  },4000);
+
+  setInterval(function(){
+    $("#flightList2").html("");
+      $.ajax({
+        type: 'GET',
+        url: '/getFlightList2',
+        success: function(res) {
+            for(let i=0;i<res.length;i++){
+              setTimeout(function(){
+                $("#flightList2").append(`${res[i].flightName} ${res[i].departure} ${res[i].destination} ${res[i].departTime}  ${res[i].arrivalTime} ${res[i].aircraftName} ${res[i].seats}<br>`)
+              },i*100);
+            }
+        }
+    });
+  },4000);
+
+  // $.ajax({
+  //   type: 'GET',
+  //   url: '/getFlightList2',
+  //   success: function(res) {
+  //     for(var i=0;i<res.length;i++){
+  //         $("#flightList2").append(`${res[i].flightName} ${res[i].departure} ${res[i].destination} ${res[i].departTime}  ${res[i].arrivalTime} ${res[i].aircraftName} ${res[i].seats}<br>`)
+  //           }
+  //   }
+  // });
+
+  $("#goToWritePaqe").click(function(){
+    location.href = "/getInsertFlightPage";
+  });
+
+  </script>
+</html>

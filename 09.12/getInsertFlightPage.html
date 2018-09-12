@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>글목록</title>
+  </head>
+  <body>
+    편명 : <input type="text" id="flightName"><br>
+    출발지 : <input type="text" id="departure"><br>
+    목적지 : <input type="text" id="destination"><br>
+    출발시간 : <input type="text" id="departTime"><br>
+    도착시간 : <input type="text" id="arrivalTime"><br>
+    항공편 : <select class="" name="" id="aircraftCode">
+      <option value="A1">A1</option>
+      <option value="A2">A2</option>
+      <option value="B1">B1</option>
+      <option value="B2">B2</option>
+      <option value="B3">B3</option>
+    </select><br><br>
+    <input type="button" value="항공편 입력" id="insertBtn">
+    <input type="button" value="항공편 페이지로" id="listBtn"><br>
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+  $("#insertBtn").click(function(){
+    $.ajax({
+      type: 'POST',
+      url: '/writePost',
+      data:
+        {
+          flightName:$("#flightName").val(),
+          departure:$("#departure").val(),
+          destination:$("#destination").val(),
+          departTime:$("#departTime").val(),
+          arrivalTime:$("#arrivalTime").val(),
+          aircraftCode:$("#aircraftCode").val()
+        },
+      success: function(res) {
+        if(res=="success") {
+          alert("항공편이 등록되었습니다");
+          location.href = "/getFlightListPage";
+        }
+        else {
+          alert("실패");
+        }
+      }
+    });
+
+  });
+
+  $("#listBtn").click(function(){
+      location.href = "/getFlightListPage";
+  });
+
+  </script>
+</html>
